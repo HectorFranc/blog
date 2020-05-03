@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}{{page.title}}{% endblock title %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{SITEURL}}/theme/css/404-14-04-20.min.css">
+{% endblock extra_css %}
+
+
+{% block content %}
+<main>
+    <section class="container">
+        {{page.content}}
+    </section>
+</main>    
+{% endblock content %}
