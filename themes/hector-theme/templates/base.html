@@ -23,9 +23,12 @@
         </div>
     </header>
 
+    {% block content %}{% endblock content %}
+
+    {% block aside_left %}
     <aside  class="aside-left">
         <a
-            href="https://twitter.com/intent/tweet?text=Mensaje&url=https://dehector.com"
+            href="https://twitter.com/intent/tweet?text=Hey! Conoce éste interesante Blog en &url=https://dehector.com"
             class="DH_aside__a DH_aside__a-twitter"
             target="_blank" rel="noopener noreferrer">
             <i class="icon-twitter" aria-label="twitter icon"></i>
@@ -42,13 +45,14 @@
             <i class="icon-feed" aria-label="feed icon"></i>
         </a>
     </aside>
+    {% endblock %}
 
-    {% block content %}{% endblock content %}
 
+    {% block aside_bottom %}
     <aside class="aside-bottom">
         <div class="container">
             <a
-                href="https://twitter.com/intent/tweet?text=Mensaje&url=https://dehector.com"
+                href="https://twitter.com/intent/tweet?text=Hey! Conoce éste interesante Blog en &url=https://dehector.com"
                 class="DH_aside__a DH_aside__a-twitter"
                 target="_blank" rel="noopener noreferrer">
                 <i class="icon-twitter" aria-label="twitter icon"></i>
@@ -66,7 +70,8 @@
             </a>
         </div>
     </aside>
-    
+    {% endblock %}
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-163882509-1"></script>
     <script>window.dataLayer= window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','UA-163882509-1')</script>

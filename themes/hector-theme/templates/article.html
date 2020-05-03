@@ -39,3 +39,49 @@
 </script>
 {% endif %}
 {% endblock extra_js %}
+
+{% block aside_left %}
+<aside  class="aside-left">
+    <a
+        href='https://twitter.com/intent/tweet?text=Hey! Mira este interesante artículo titulado "{{article.title}}" en&url=https://dehector.com/{{ article.url }}'
+        class="DH_aside__a DH_aside__a-twitter"
+        target="_blank" rel="noopener noreferrer">
+        <i class="icon-twitter" aria-label="twitter icon"></i>
+    </a>
+    <a
+        href="https://www.facebook.com/sharer?u=https://dehector.com/{{ article.url }}"
+        class="DH_aside__a DH_aside__a-facebook"
+        target="_blank" rel="noopener noreferrer">
+        <i class="icon-facebook" aria-label="facebook icon"></i>
+    </a>
+    <a
+        href="#"
+        class="DH_aside__a DH_aside__a-feed">
+        <i class="icon-feed" aria-label="feed icon"></i>
+    </a>
+</aside>
+{% endblock %}
+
+{% block aside_bottom %}
+<aside class="aside-bottom">
+    <div class="container">
+        <a
+            href='https://twitter.com/intent/tweet?text=Hey! Mira este interesante artículo titulado "{{article.title}}" en&url=https://dehector.com/{{ article.url }}'
+            class="DH_aside__a DH_aside__a-twitter"
+            target="_blank" rel="noopener noreferrer">
+            <i class="icon-twitter" aria-label="twitter icon"></i>
+        </a>
+        <a
+            href="https://www.facebook.com/sharer?u=https://dehector.com/{{ article.url }}"
+            class="DH_aside__a DH_aside__a-facebook"
+            target="_blank" rel="noopener noreferrer">
+            <i class="icon-facebook" aria-label="facebook icon"></i>
+        </a>
+        <a
+            href="#"
+            class="DH_aside__a DH_aside__a-feed">
+            <i class="icon-feed" aria-label="feed icon"></i>
+        </a>
+    </div>
+</aside>
+{% endblock %}
