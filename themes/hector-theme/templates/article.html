@@ -4,7 +4,9 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{{SITEURL}}/theme/css/post-02-05-20.min.css">
+{% if '<code>' in article.content %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/atom-one-dark.min.css">
+{% endif %}
 {% endblock extra_css %}
     
 {% block content %}
