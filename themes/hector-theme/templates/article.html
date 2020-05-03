@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}{{article.title}}{% endblock title %}    
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{SITEURL}}/theme/css/post-02-05-20.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/atom-one-dark.min.css">
+{% endblock extra_css %}
+    
+{% block content %}
+<main class="DH_post">
+    <div class="container">
+        <h2 class="DH_post__title">{{article.title}}</h2>
+        <p class="DH_post__date"><small>Fecha de publicación: {{article.locale_date|title}}</small></p>
+        <p class="DH_post__intro">{{article.description}}</p>
+        {{article.content}}
+    </div>
+</main>
+{% endblock content %}
+        
+{% block extra_js %}
+{% if '<code>' in article.content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/languages/python.min.js"></script>
+<script>
+    // Highlight
+    hljs.initHighlightingOnLoad()
+</script>
+{% endif %}
+{% if '<table>' in article.content %}
+<script>
+    // Table wrappers
+    for(let table of document.body.getElementsByTagName('table')) {
+        let wrapper = document.createElement('div')
+        wrapper.classList.add('DH_table-container')
+        table.parentNode.insertBefore(wrapper, table)
+        wrapper.appendChild(table)
+    }
+</script>
+{% endif %}
+{% endblock extra_js %}
